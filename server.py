@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 #-----------------------------------------------------------------------
-# runserver.py
-# Authors: Ari Riggins and Nasko Tenev
+# server.py
+# Authors: Nasko Tenev
 #-----------------------------------------------------------------------
 
 import argparse
 from sys import argv, exit, stderr
-# from classsearch import app
+from credit import app
 
 #-----------------------------------------------------------------------
 
