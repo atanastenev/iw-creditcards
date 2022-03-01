@@ -25,5 +25,3 @@ def index():
     html = render_template('index.html')
     response = make_response(html)
     return response
-
-
