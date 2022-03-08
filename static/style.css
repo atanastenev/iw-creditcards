@@ -32,7 +32,7 @@ button {
 
 .menu {
   align-items: center;
-  background-color: #48c0ea;
+  background-color: #48ea8c;
   flex-direction: row;
   height: 90px;
   position: fixed;
@@ -92,7 +92,7 @@ button {
 }
 
 .nav {
-  background-color: #48c0ea;
+  background-color: #48ea8c;
 }
 
 .navbar-collapse.collapsing .menu-options {
