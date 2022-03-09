@@ -25,3 +25,13 @@ def index():
     html = render_template('index.html')
     response = make_response(html)
     return response
+
+
+@app.route('/creditable', methods=['GET'])
+def credit_card_table():
+    '''Runs databse of credit cards page.'''
+    print (index.__doc__)
+
+    html = render_template('creditable.html')
+    response = make_response(html)
+    return response
