@@ -21,27 +21,31 @@
                 <table class="table table-hover table-striped">
                   <thead>
                     <tr>
-                      <th>Firstname</th>
-                      <th>Lastname</th>
-                      <th>Email</th>
+                      <th>Name</th>
+                      <th>Bank</th>
+                      <th>Annual Fee</th>
+                      <th>Recommended Credit Score</th>
+                      <th>Bonus</th>
+                      <th>Pros</th>
+                      <th>Cons</th>
+                      <th>Details</th>
+                      <th>Application Link</th>
                     </tr>
                   </thead>
                   <tbody>
+                  {% for card in cards %}
                     <tr>
-                      <td>John</td>
-                      <td>Doe</td>
-                      <td>john@example.com</td>
+                      <td>{{card.get_name}}</td>
+                      <td>{{card.get_bank}}</td>
+                      <td>{{card.get_afee}}</td>
+                      <td>{{card.get_creditscore}}</td>
+                      <td>{{card.get_bonus}}</td>
+                      <td>{{card.get_pros}}</td>
+                      <td>{{card.get_cons}}</td>
+                      <td>{{card.get_details}}</td>
+                      <td><a href = {{card.get_link}}>{{card.get_link}}</a></td>
                     </tr>
-                    <tr>
-                      <td>Mary</td>
-                      <td>Moe</td>
-                      <td>mary@example.com</td>
-                    </tr>
-                    <tr>
-                      <td>July</td>
-                      <td>Dooley</td>
-                      <td>july@example.com</td>
-                    </tr>
+                  {% endfor %}
                   </tbody>
                 </table>
               </div>

@@ -32,13 +32,23 @@ def main():
 
                 # -------------------------------------------------------
 
+                pros = "No annual fee; Qualify with limited/bad credit; \
+                    Bonus categories; Intro APR period; \
+                        Reports to the three major credit bureaus"
+                cons = "complicated awards"
+
+                details = "0\%\ intro APR on Purchases for 6 months and 10.99\%\ intro APR on Balance Transfers for 6 months"
+
+                link = "https://www.discover.com/products/student-it-af.html?sc=RJUK&cmpgnid=ls-dca-ir-student-it-RJUK-dtop-980&irgwc=1&gclid=_srytbrlzfokf63ubmv30kbtmsv2xtliknf3jh9zp00&sid=04664157&pid=170911&aid=568217&source=Affiliates&sku=110"
+
                 cursor.execute("DROP TABLE IF EXISTS creditcards;")
                 cursor.execute("CREATE TABLE creditcards (name TEXT, bank TEXT,\
                  annualfee TEXT, recommendedcs TEXT, bonus TEXT, pros TEXT,\
                       cons TEXT, details TEXT, apply TEXT);")
                 cursor.execute("insert into ambassadors (first, last, hs, state, email)\
                     values (%s, %s, %s, %s, %s, %s, %s, %s, %s);", 
-                    ['Beta', 'Ambassador', 'Princeton High School', 'NJ',  'prefaceprojectdev@gmail.com'])
+                    ['DiscoverIt', 'Discover', '0', '630-689',  'Cashback Match, 5\%\ cashback, etc.', 
+                        pros, cons, details, link])
 
                 # # -------------------------------------------------------
 
@@ -51,12 +61,12 @@ def main():
         exit(1)
 
 
-def encode_password(password):
-    # https://docs.python.org/3.5/library/hashlib.html
-    password_bytes = password.encode()
-    salt_bytes = APP_SALT.encode()
+# def encode_password(password):
+#     # https://docs.python.org/3.5/library/hashlib.html
+#     password_bytes = password.encode()
+#     salt_bytes = APP_SALT.encode()
 
-    return hashlib.pbkdf2_hmac('sha256', password_bytes, salt_bytes, 100567)
+#     return hashlib.pbkdf2_hmac('sha256', password_bytes, salt_bytes, 100567)
 
 # -----------------------------------------------------------------------
 
