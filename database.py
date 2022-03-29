@@ -53,7 +53,7 @@ def searchcards():
 
 
 
-def addcard():
+def addcard(card):
     '''Inserts a new credit card into the database'''
     print (searchquery.__doc__)
     try:
@@ -67,9 +67,6 @@ def addcard():
                 stmt_str+="bonus, pros, cons, details, apply "
                 stmt_str+="FROM creditcards "
                 # param = []
-
-                stmt_str+="ORDER BY dept ASC, coursenum ASC, "
-                stmt_str+="classid ASC "
 
                 cursor.execute(stmt_str)
                 line = cursor.fetchone()
