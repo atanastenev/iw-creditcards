@@ -12,7 +12,76 @@
 
         {% include 'navbar.html' %}
 
+        <div class="modal fade" id="addcard">
+          <div class="modal-dialog">
+            <div class="modal-content">
+        
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Add a New Credit Card</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+        
+              <!-- Modal body -->
+              <div class="modal-body">
+                <form action="/action_page.php">
+                  <div class="mb-3 mt-3">
+                    <label for="email" class="form-label">Card Name:</label>
+                    <input type="email" class="form-control" id="name" placeholder="Enter email" name="email">
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Bank Name:</label>
+                    <input type="password" class="form-control" id="bank" placeholder="Enter password" name="pswd">
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Annual Fee:</label>
+                    <input type="password" class="form-control" id="aunf" placeholder="Enter password" name="pswd">
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Recommended Credit Score:</label>
+                    <input type="password" class="form-control" id="rcs" placeholder="Enter password" name="pswd">
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Sign-Up Bonus:</label>
+                    <input type="password" class="form-control" id="bonus" placeholder="Enter password" name="pswd">
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Pros:</label>
+                    <input type="password" class="form-control" id="pros" placeholder="Enter password" name="pswd">
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Cons:</label>
+                    <input type="password" class="form-control" id="cons" placeholder="Enter password" name="pswd">
+                  </div>
+                  <div class="mb-3">
+                    <label for="comment">Details:</label>
+                    <textarea class="form-control" rows="5" id="details" name="text"></textarea> 
+                  </div>
+                  <div class="mb-3">
+                    <label for="pwd" class="form-label">Application Link:</label>
+                    <input type="password" class="form-control" id="apply" placeholder="Enter password" name="pswd">
+                  </div>
+                  <div class="mb-3">
+                    <label for="comment">Advice:</label>
+                    <textarea class="form-control" rows="5" id="details" name="text"></textarea> 
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form> 
+              </div>
+        
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              </div>
+        
+            </div>
+          </div>
+        </div>
+
         <div class="content vertical-flex-container" id="admin-main-content">
+            <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addcard">
+                Add Credit Card
+            </button>
             <div class="container-fluid">
                 <h2>Credit Cards Database</h2>
                 <p>Choose from any of the following credit card offers and apply to get your first

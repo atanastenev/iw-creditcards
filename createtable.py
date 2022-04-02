@@ -5,11 +5,9 @@
 # Author: Nasko Tenev
 # -----------------------------------------------------------------------
 
-import hashlib
 from sys import argv, stderr, exit
 from contextlib import closing
 from psycopg2 import connect
-import os
 
 # APP_SALT = os.environ['APP_SALT']
 # POSTGRES_PASSWORD = os.environ['POSTGRES_PASSWORD']
@@ -25,14 +23,15 @@ def main():
         exit(1)
 
     try:
-        with connect(DATABASE_URL) as connection:
+        with connect( host = 'localhost', port=5432, user='postgres', password='gormiti25!',
+            database = 'creditcards') as connection:
 
             with closing(connection.cursor()) as cursor:
                 # cursor.execute('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";')
 
                 # -------------------------------------------------------
 
-                pros = "No annual fee; Qualify with limited/bad credit; \
+                pros = "No annual fee; Qualify with limited/bad credit;\n \
                     Bonus categories; Intro APR period; \
                         Reports to the three major credit bureaus"
                 cons = "complicated awards"
@@ -43,16 +42,13 @@ def main():
 
                 cursor.execute("DROP TABLE IF EXISTS creditcards;")
                 cursor.execute("CREATE TABLE creditcards (name TEXT, bank TEXT,\
-                 annualfee TEXT, recommendedcs TEXT, bonus TEXT, pros TEXT,\
-                      cons TEXT, details TEXT, apply TEXT);")
-                cursor.execute("insert into ambassadors (first, last, hs, state, email)\
-                    values (%s, %s, %s, %s, %s, %s, %s, %s, %s);", 
+                 annualfee TEXT, recomcs TEXT, bonus TEXT, pros TEXT,\
+                      cons TEXT, details TEXT, apply TEXT, advice TEXT);")
+                cursor.execute("insert into creditcards (name, bank, annualfee, recomcs, bonus,\
+                    pros, cons, details, apply, advice)\
+                    values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);", 
                     ['DiscoverIt', 'Discover', '0', '630-689',  'Cashback Match, 5\%\ cashback, etc.', 
-                        pros, cons, details, link])
-
-                # # -------------------------------------------------------
-
-
+                        pros, cons, details, link, 'Make sure to '])
 
                 connection.commit()
 
