@@ -23,7 +23,7 @@ def main():
         exit(1)
 
     try:
-        with connect( host = 'localhost', port=5432, user='postgres', password='gormiti25!',
+        with connect( host = 'localhost', port=5432, user='postgres', password='user',
             database = 'creditcards') as connection:
 
             with closing(connection.cursor()) as cursor:
