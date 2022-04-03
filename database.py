@@ -12,8 +12,6 @@ from contextlib import closing
 from sqlite3 import connect
 from creditcard import CreditCard
 
-from creditcard import CreditCard
-
 #-----------------------------------------------------------------------
 
 DATABASE_URL = 'file:reg.sqlite?mode=ro'
