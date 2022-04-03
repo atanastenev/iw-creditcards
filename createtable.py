@@ -8,11 +8,12 @@
 from sys import argv, stderr, exit
 from contextlib import closing
 from psycopg2 import connect
+import os
 
-# APP_SALT = os.environ['APP_SALT']
-# POSTGRES_PASSWORD = os.environ['POSTGRES_PASSWORD']
-# BETA_PASSWORD = os.environ['BETA_PASSWORD']
-# DATABASE_URL = os.environ['DATABASE_URL']
+APP_SALT = os.environ['APP_SALT']
+POSTGRES_PASSWORD = os.environ['POSTGRES_PASSWORD']
+BETA_PASSWORD = os.environ['BETA_PASSWORD']
+DATABASE_URL = os.environ['DATABASE_URL']
 
 # -----------------------------------------------------------------------
 
@@ -23,8 +24,7 @@ def main():
         exit(1)
 
     try:
-        with connect( host = 'localhost', port=5432, user='postgres', password='user',
-            database = 'creditcards') as connection:
+        with connect(DATABASE_URL) as connection:
 
             with closing(connection.cursor()) as cursor:
                 # cursor.execute('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";')
