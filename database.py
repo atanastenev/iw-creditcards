@@ -22,8 +22,7 @@ DATABASE_URL = os.environ['DATABASE_URL']
 def searchcards():
     '''Returns a list of all cards.'''
     try:
-        with connect(DATABASE_URL, uri=True) as connection:
-            cursor = connection.cursor()
+        with connect(DATABASE_URL) as connection:
             with closing(connection.cursor()) as cursor:
 
                 # the string used to call the SQL commands
@@ -53,8 +52,7 @@ def searchcards():
 def addcard(card):
     '''Inserts a new credit card into the database'''
     try:
-        with connect(DATABASE_URL, uri=True) as connection:
-            cursor = connection.cursor()
+        with connect(DATABASE_URL) as connection:
             with closing(connection.cursor()) as cursor:
 
                 # the string used to call the SQL commands
