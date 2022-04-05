@@ -59,6 +59,7 @@ def main():
                         pros, cons, details, link, 'Make sure to put a realistic income when applying for this card'])
                 print("new cards added")
                 connection.commit()
+                print("after commit")
 
     except Exception as ex:
         print(ex, file=stderr)
