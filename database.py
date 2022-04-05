@@ -22,10 +22,11 @@ DATABASE_URL = os.environ['DATABASE_URL']
 
 def searchcards():
     '''Returns a list of all cards.'''
+    print("before connecting to database")
     try:
         with connect(DATABASE_URL) as connection:
             with closing(connection.cursor()) as cursor:
-
+                print("connection to database")
                 # the string used to call the SQL commands
                 # to extract specific elements from the database
                 stmt_str="SELECT name, bank, annualfee, recommendedsc, "
@@ -59,20 +60,17 @@ def addcard(card):
                  annualfee, recomcs, bonus, pros,\
                       cons, details, apply, advice) values \
                         (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-                credicard_values = [card.get_name(),card.get_bank()]
-                credicard_values += [card.get_afee(),card.get_creditscore()]
-                credicard_values += [card.get_bonus(),card.get_pros(),card.get_cons()]
-                credicard_values += [card.get_details(), card.get_link(), card.get_advice()]
+                credicard_values = [card.get_name(),card.get_bank(),card.get_afee(),card.get_creditscore()]
+                credicard_values.append(card.get_bonus())
+                credicard_values.append(card.get_pros())
+                credicard_values.append(card.get_cons())
+                credicard_values.append(card.get_details()) 
+                credicard_values.append(card.get_link()) 
+                credicard_values.append(card.get_advice())
                 
                 cursor.execute(stmt_str, credicard_values)
-                line = cursor.fetchone()
-                cards = []
-                while line is not None:
-                    card = CreditCard(line)
-                    cards.append(card)
-                    line = cursor.fetchone()
-                return cards
+                connection.commit()
 
     except Exception as ex:
-        print(str(sys.argv[0]) + ": " + str(ex), file=stderr)
+        print(ex, file=stderr)
         exit(1)

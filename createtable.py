@@ -22,13 +22,13 @@ def main():
     if len(argv) != 1:
         print('Usage: python create.py', file=stderr)
         exit(1)
-
+    print("call too database")
     try:
         with connect(DATABASE_URL) as connection:
 
             with closing(connection.cursor()) as cursor:
                 # cursor.execute('CREATE EXTENSION IF NOT EXISTS "uuid-ossp";')
-
+                print("connect database")
                 # -------------------------------------------------------
 
                 pros = "No annual fee; Qualify with limited/bad credit;\n \
@@ -44,19 +44,20 @@ def main():
                 cursor.execute("CREATE TABLE creditcards (name TEXT, bank TEXT,\
                  annualfee TEXT, recomcs TEXT, bonus TEXT, pros TEXT,\
                       cons TEXT, details TEXT, apply TEXT, advice TEXT);")
+                print("database created?")
                 
                 cursor.execute("insert into creditcards (name, bank, annualfee, recomcs, bonus,\
                     pros, cons, details, apply, advice)\
                     values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);", 
                     ['Sample Name', 'Sample Bank', '$0', '0-600',  'Sample Bonus', 
                         'No pros', 'No cons', 'No details', 'No link', 'Sample advice'])
-                
+                print("first card added")
                 cursor.execute("insert into creditcards (name, bank, annualfee, recomcs, bonus,\
                     pros, cons, details, apply, advice)\
                     values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);", 
                     ['DiscoverIt', 'Discover', '0', '630-689',  'Cashback Match, 5\%\ cashback, etc.', 
                         pros, cons, details, link, 'Make sure to put a realistic income when applying for this card'])
-
+                print("new cards added")
                 connection.commit()
 
     except Exception as ex:
