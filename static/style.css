@@ -2,7 +2,7 @@
 
 html,
 body {
-  font-family: Verdana, "Helvetica Neue", Helvetica, sans-serif;
+  font-family: Verdana, sans-serif;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -68,7 +68,7 @@ button {
 
 .navbar-nav > li.menu-option > a.nav-link {
   color: white; /* override bootstrap's default color */
-}
+ }
 
 .menu-option:hover:not(.unclickable) {
   color: white;

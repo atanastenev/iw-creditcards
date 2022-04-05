@@ -9,7 +9,7 @@ from sys import stderr
 from creditcard import CreditCard
 from flask import Flask, request, make_response
 from flask import render_template
-from database import searchcards, addcard
+# from database import searchcards, addcard
 # from database import searchquery, searchdetails
 
 #-----------------------------------------------------------------------
