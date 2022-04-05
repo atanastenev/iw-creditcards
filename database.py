@@ -11,10 +11,11 @@ from sys import exit, stderr
 from contextlib import closing
 from sqlite3 import connect
 from creditcard import CreditCard
+import os
 
 #-----------------------------------------------------------------------
 
-DATABASE_URL = 'file:reg.sqlite?mode=ro'
+DATABASE_URL = os.environ['DATABASE_URL']
 
 #-----------------------------------------------------------------------
 
