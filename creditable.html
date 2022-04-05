@@ -63,7 +63,7 @@
                   </div>
                   <div class="mb-3">
                     <label for="comment">Advice:</label>
-                    <textarea class="form-control" rows="5" id="details" name="text"></textarea> 
+                    <textarea class="form-control" rows="5" id="advice" name="text"></textarea> 
                   </div>
                   <button id="addCard" type="submit" class="btn btn-primary">Submit</button>
                 </form> 
@@ -102,7 +102,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                  {% for card in cards %}
+                  <!-- {% for card in cards %}
                     <tr>
                       <td>{{card.get_name()}}</td>
                       <td>{{card.get_bank()}}</td>
@@ -115,7 +115,21 @@
                       <td><a href = {{card.get_link()}}>{{card.get_link()}}</a></td>
                       <td>{{card.get_advice()}}</td>
                     </tr>
-                  {% endfor %}
+                  {% endfor %} -->
+                  <tr>
+                    <td>DiscoverIt</td>
+                    <td>Discover</td>
+                    <td>$0</td>
+                    <td>630-689</td>
+                    <td>Cashback Match, 5\%\ cashback, etc.</td>
+                    <td>No annual fee; Qualify with limited/bad credit;
+                        Bonus categories; Intro APR period;
+                          Reports to the three major credit bureaus</td>
+                    <td>Complicated awards</td>
+                    <td>0\%\ intro APR on Purchases for 6 months and 10.99\%\ intro APR on Balance Transfers for 6 months</td>
+                    <td><a href = 'https://www.discover.com/products/student-it-af.html?sc=RJUK&cmpgnid=ls-dca-ir-student-it-RJUK-dtop-980&irgwc=1&gclid=_srytbrlzfokf63ubmv30kbtmsv2xtliknf3jh9zp00&sid=04664157&pid=170911&aid=568217&source=Affiliates&sku=110'>Apply Here</a></td>
+                    <td>Make sure to apply with a realistic income when applying for this card</td>
+                  </tr>
                   </tbody>
                 </table>
               </div>
