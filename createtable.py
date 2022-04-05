@@ -47,6 +47,11 @@ def main():
                 cursor.execute("insert into creditcards (name, bank, annualfee, recomcs, bonus,\
                     pros, cons, details, apply, advice)\
                     values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);", 
+                    ['Sample Name', 'Sample Bank', '$0', '0-600',  'Sample Bonus', 
+                        'No pros', 'No cons', 'No details', 'No link', 'Sample advice'])
+                cursor.execute("insert into creditcards (name, bank, annualfee, recomcs, bonus,\
+                    pros, cons, details, apply, advice)\
+                    values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);", 
                     ['DiscoverIt', 'Discover', '0', '630-689',  'Cashback Match, 5\%\ cashback, etc.', 
                         pros, cons, details, link, 'Make sure to put a realistic income when applying for this card'])
 

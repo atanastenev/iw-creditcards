@@ -15,7 +15,7 @@ import os
 
 #-----------------------------------------------------------------------
 
-#DATABASE_URL = os.environ['DATABASE_URL']
+DATABASE_URL = os.environ['DATABASE_URL']
 
 #-----------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ def searchcards():
                 return cards
 
     except Exception as ex:
-        print(str(sys.argv[0]) + ": " + str(ex), file=stderr)
+        print(ex, file=stderr)
         exit(1)
 
 
