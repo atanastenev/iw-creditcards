@@ -44,11 +44,13 @@ def main():
                 cursor.execute("CREATE TABLE creditcards (name TEXT, bank TEXT,\
                  annualfee TEXT, recomcs TEXT, bonus TEXT, pros TEXT,\
                       cons TEXT, details TEXT, apply TEXT, advice TEXT);")
+                
                 cursor.execute("insert into creditcards (name, bank, annualfee, recomcs, bonus,\
                     pros, cons, details, apply, advice)\
                     values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);", 
                     ['Sample Name', 'Sample Bank', '$0', '0-600',  'Sample Bonus', 
                         'No pros', 'No cons', 'No details', 'No link', 'Sample advice'])
+                
                 cursor.execute("insert into creditcards (name, bank, annualfee, recomcs, bonus,\
                     pros, cons, details, apply, advice)\
                     values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);", 
