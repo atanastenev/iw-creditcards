@@ -15,7 +15,7 @@ import os
 
 #-----------------------------------------------------------------------
 
-DATABASE_URL = os.environ['DATABASE_URL']
+#DATABASE_URL = os.environ['DATABASE_URL']
 
 #-----------------------------------------------------------------------
 
@@ -31,9 +31,6 @@ def searchcards():
                 stmt_str+="bonus, pros, cons, details, apply, advice "
                 stmt_str+="FROM creditcards "
 
-                # stmt_str+="ORDER BY dept ASC, coursenum ASC, "
-                # stmt_str+="classid ASC "
-
                 cursor.execute(stmt_str)
                 line = cursor.fetchone()
                 cards = []
@@ -44,7 +41,7 @@ def searchcards():
                 return cards
 
     except Exception as ex:
-        print(str(sys.argv[0]) + ": " + ex, file=stderr)
+        print(str(sys.argv[0]) + ": " + str(ex), file=stderr)
         exit(1)
 
 
@@ -76,5 +73,5 @@ def addcard(card):
                 return cards
 
     except Exception as ex:
-        print(str(sys.argv[0]) + ": " + ex, file=stderr)
+        print(str(sys.argv[0]) + ": " + str(ex), file=stderr)
         exit(1)
