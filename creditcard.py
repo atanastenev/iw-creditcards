@@ -16,6 +16,7 @@ class CreditCard:
         self._cons = card[6]
         self._details = card[7]
         self._link = card[8]
+        self._advice = card[9]
 
     # def __str__(self): 
     #     return self._month + " " + self._day + " "+ self._year
@@ -38,5 +39,7 @@ class CreditCard:
         return self._details
     def get_link(self):
         return self._link
+    def get_advice(self):
+        return self._advice
     def to_string(self): 
         return self._name + " " + self._bank + " "+ self._link

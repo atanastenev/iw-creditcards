@@ -20,7 +20,6 @@ DATABASE_URL = 'file:reg.sqlite?mode=ro'
 
 def searchcards():
     '''Returns a list of all cards.'''
-    print (searchquery.__doc__)
     try:
         with connect(DATABASE_URL, uri=True) as connection:
             cursor = connection.cursor()
@@ -29,12 +28,11 @@ def searchcards():
                 # the string used to call the SQL commands
                 # to extract specific elements from the database
                 stmt_str="SELECT name, bank, annualfee, recommendedsc, "
-                stmt_str+="bonus, pros, cons, details, apply "
+                stmt_str+="bonus, pros, cons, details, apply, advice "
                 stmt_str+="FROM creditcards "
-                # param = []
 
-                stmt_str+="ORDER BY dept ASC, coursenum ASC, "
-                stmt_str+="classid ASC "
+                # stmt_str+="ORDER BY dept ASC, coursenum ASC, "
+                # stmt_str+="classid ASC "
 
                 cursor.execute(stmt_str)
                 line = cursor.fetchone()
@@ -53,7 +51,6 @@ def searchcards():
 
 def addcard(card):
     '''Inserts a new credit card into the database'''
-    print (searchquery.__doc__)
     try:
         with connect(DATABASE_URL, uri=True) as connection:
             cursor = connection.cursor()
@@ -61,12 +58,16 @@ def addcard(card):
 
                 # the string used to call the SQL commands
                 # to extract specific elements from the database
-                stmt_str="INSERT INTO  "
-                stmt_str+="bonus, pros, cons, details, apply "
-                stmt_str+="FROM creditcards "
-                # param = []
-
-                cursor.execute(stmt_str)
+                stmt_str="INSERT INTO creditcards (name, bank,\
+                 annualfee, recomcs, bonus, pros,\
+                      cons, details, apply, advice) values \
+                        (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+                credicard_values = [card.get_name(),card.get_bank()]
+                credicard_values += [card.get_afee(),card.get_creditscore()]
+                credicard_values += [card.get_bonus(),card.get_pros(),card.get_cons()]
+                credicard_values += [card.get_details(), card.get_link(), card.get_advice()]
+                
+                cursor.execute(stmt_str, credicard_values)
                 line = cursor.fetchone()
                 cards = []
                 while line is not None:

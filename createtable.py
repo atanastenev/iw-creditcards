@@ -48,7 +48,7 @@ def main():
                     pros, cons, details, apply, advice)\
                     values (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s);", 
                     ['DiscoverIt', 'Discover', '0', '630-689',  'Cashback Match, 5\%\ cashback, etc.', 
-                        pros, cons, details, link, 'Make sure to '])
+                        pros, cons, details, link, 'Make sure to put a realistic income when applying for this card'])
 
                 connection.commit()
 

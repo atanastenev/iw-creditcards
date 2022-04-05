@@ -23,7 +23,7 @@ def index():
     '''Runs orgin page.'''
     print (index.__doc__)
 
-    html = render_template('index.html')
+    html = render_template('index.html', title = "IW09 - Learn All About Credit Cards")
     response = make_response(html)
     return response
 
@@ -31,7 +31,6 @@ def index():
 @app.route('/creditable', methods=['GET'])
 def credit_card_table():
     '''Runs databse of credit cards page.'''
-    print (index.__doc__)
 
     # name = session.get('')
     
@@ -44,6 +43,6 @@ def credit_card_table():
         return response
 
 
-    html = render_template('creditable.html', cards=cards)
+    html = render_template('creditable.html', cards=cards, title = "Beginner Friendly Credit Cards")
     response = make_response(html)
     return response
