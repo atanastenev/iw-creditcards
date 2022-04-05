@@ -33,6 +33,8 @@ def credit_card_table():
     '''Runs databse of credit cards page.'''
     print (index.__doc__)
 
+    # name = session.get('')
+    
     try:
         cards = searchcards()
     except Exception as excpetion:

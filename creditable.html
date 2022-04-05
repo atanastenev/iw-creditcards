@@ -65,7 +65,7 @@
                     <label for="comment">Advice:</label>
                     <textarea class="form-control" rows="5" id="details" name="text"></textarea> 
                   </div>
-                  <button type="submit" class="btn btn-primary">Submit</button>
+                  <button id="addCard" type="submit" class="btn btn-primary">Submit</button>
                 </form> 
               </div>
         
@@ -129,6 +129,47 @@
     </script>
 
     <script>
+            'use strict';
+
+      // check if the necessary inputs for log in filled
+      // if they are, enable the button to fill the form
+      // else, disable the button
+      // note: this does not necessarily change state of button
+      // function checkIfInputsFilled() {
+      //     if ($('#role').val() == null) {
+      //         $('#login-button').prop('disabled', true);
+      //         return;
+      //     }
+
+      //     if ($('#email').val() == '') {
+      //         $('#login-button').prop('disabled', true);
+      //         return;
+      //     }
+          
+      //     if ($('#password').val() == '') {
+      //         $('#login-button').prop('disabled', true);
+      //         return;
+      //     }
+
+      //     $('#login-button').prop('disabled', false);
+      // }
+
+      // function setup() {
+      //     checkIfInputsFilled();
+
+      //     $('#role').on('change', checkIfInputsFilled);
+      //     $('#email').on('keyup', checkIfInputsFilled);
+      //     $('#password').on('keyup', checkIfInputsFilled);
+
+      //     if('{{error}}' != '') {
+      //         $('#login-error-message').css('visibility', 'visible');
+      //     }
+      // }
+
+      // $('document').ready(setup);
+      // document.getElementById("addCard").onclick = function() {
+        
+      // };
     </script>
     </body>
 </html>
