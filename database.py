@@ -9,7 +9,7 @@
 import sys
 from sys import exit, stderr
 from contextlib import closing
-from sqlite3 import connect
+from psycopg2 import connect
 from creditcard import CreditCard
 import os
 
