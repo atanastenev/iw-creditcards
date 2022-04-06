@@ -29,7 +29,7 @@ def searchcards():
                 print("connection to database")
                 # the string used to call the SQL commands
                 # to extract specific elements from the database
-                stmt_str="SELECT name, bank, annualfee, recommendedsc, "
+                stmt_str="SELECT name, bank, annualfee, recomcs, "
                 stmt_str+="bonus, pros, cons, details, apply, advice "
                 stmt_str+="FROM creditcards "
 
