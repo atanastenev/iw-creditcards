@@ -58,6 +58,13 @@ def main():
                     ['DiscoverIt', 'Discover', '0', '630-689',  'Cashback Match, 5\%\ cashback, etc.', 
                         pros, cons, details, link, 'Make sure to put a realistic income when applying for this card'])
                 print("new cards added")
+                stmt_str="SELECT name, bank, annualfee, recommendedsc, "
+                stmt_str+="bonus, pros, cons, details, apply, advice "
+                stmt_str+="FROM creditcards "
+
+                cursor.execute(stmt_str)
+                line = cursor.fetchone()
+                print(line)
                 connection.commit()
                 print("after commit")
 
