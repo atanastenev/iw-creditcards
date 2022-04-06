@@ -15,8 +15,8 @@ import os
 
 #-----------------------------------------------------------------------
 
-POSTGRES_PASSWORD = os.environ['POSTGRES_PASSWORD']
-DATABASE_URL = os.environ['DATABASE_URL']+'sslmode=require'
+# POSTGRES_PASSWORD = os.environ['POSTGRES_PASSWORD']
+DATABASE_URL = os.environ['DATABASE_URL']
 
 #-----------------------------------------------------------------------
 

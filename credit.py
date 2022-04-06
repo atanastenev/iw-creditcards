@@ -9,8 +9,7 @@ from sys import stderr
 from creditcard import CreditCard
 from flask import Flask, request, make_response
 from flask import render_template
-# from database import searchcards, addcard
-# from database import searchquery, searchdetails
+from database import searchcards, addcard
 
 #-----------------------------------------------------------------------
 
@@ -29,7 +28,7 @@ def index():
     return response
 
 
-@app.route('/creditable', methods=['GET'])
+@app.route('/creditable', methods=['GET', 'POST'])
 def credit_card_table():
     '''Runs databse of credit cards page.'''
 
@@ -54,15 +53,15 @@ def credit_card_table():
     #     card = CreditCard(list)
     #     addcard(card)
 
-    # try:
-    #     cards = searchcards()
-    # except Exception as excpetion:
-    #     print(excpetion, file=stderr)
-    #     html = render_template('error.html')
-    #     response = make_response(html)
-    #     return response
+    try:
+        cards = searchcards()
+    except Exception as excpetion:
+        print(excpetion, file=stderr)
+        html = render_template('error.html')
+        response = make_response(html)
+        return response
 
 
-    html = render_template('creditable.html', title = "Beginner Friendly Credit Cards")
+    html = render_template('creditable.html', cards=cards, title = "Beginner Friendly Credit Cards")
     response = make_response(html)
     return response
