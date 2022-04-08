@@ -25,7 +25,7 @@
         
               <!-- Modal body -->
               <div class="modal-body">
-                <form action="/action_page.php">
+                <form id="add-card-popup" action="add_credit_card" method="POST">
                   <div class="container-fluid">
                     <label for="text" class="form-label">Card Name:</label>
                     <input type="text" class="form-control" id="name" placeholder="Enter Credit Card Name">
@@ -101,7 +101,7 @@
               <div id="addcardsection" class="container-fluid bg-light" style="padding:10px 10px;">
                 <div class="row">
                   <div class="col-sm">
-                      <p><b>For Admins Only:</b>Admins can add new beginner Credit Card Offers</p>
+                      <p><b>For Admins Only: </b>Admins can add new beginner credit card offers</p>
                   </div>
                   <div class="col-sm">
                     <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addCardModal">
@@ -141,7 +141,7 @@
                       <td>{{card.get_pros()}}</td>
                       <td>{{card.get_cons()}}</td>
                       <td>{{card.get_details()}}</td>
-                      <td><a href = {{card.get_link()}}>{{card.get_link()}}</a></td>
+                      <td><a href = {{card.get_link()}}>Apply Here</a></td>
                       <td>{{card.get_advice()}}</td>
                     </tr>
                   {% endfor %}
