@@ -10,7 +10,6 @@ from creditcard import CreditCard
 from flask import Flask, redirect, request
 from flask import render_template, make_response
 from database import searchcards, addcard
-import string
 
 #-----------------------------------------------------------------------
 
@@ -93,7 +92,7 @@ def add_credit_card():
     print(key)
     print(type(key))
 
-    if string(key) == string(adminpass):
+    if str(key) == str(adminpass):
         print("key is correct")
         line = [name, bank, annualfee, rcs, bonus, pros, cons, details, link, advice]
         try:
