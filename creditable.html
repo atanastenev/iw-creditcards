@@ -78,10 +78,10 @@
                   <hr>
                   <div class="container-fluid">
                     <label for="text" class="form-label">Admin Verification Key:</label>
-                    <input type="password" class="form-control" id="apply" placeholder="Enter Verification Key" name="pswd">
+                    <input type="password" class="form-control" id="key" placeholder="Enter Verification Key" name="pswd">
                   </div>
                   <hr>
-                  <button id="addCardButton" type="submit" class="btn btn-primary">Submit</button>
+                  <button id="addCardButton" type="submit" class="btn btn-primary" disabled>Submit</button>
                 </form> 
               </div>
         
@@ -99,9 +99,16 @@
 
               <br>
               <div id="addcardsection" class="container-fluid bg-light" style="padding:10px 10px;">
-                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addCardModal">
-                  Add Credit Card
-                </button>
+                <div class="row">
+                  <div class="col-sm">
+                      <p><b>For Admins Only:</b>Admins can add new beginner Credit Card Offers</p>
+                  </div>
+                  <div class="col-sm">
+                    <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addCardModal">
+                      Add Credit Card
+                    </button>
+                  </div>
+                </div>
               </div>
               <br>
               <div>
@@ -167,47 +174,84 @@
     </script>
 
     <script>
-            'use strict';
+      'use strict';
 
-      // check if the necessary inputs for log in filled
-      // if they are, enable the button to fill the form
-      // else, disable the button
-      // note: this does not necessarily change state of button
-      // function checkIfInputsFilled() {
-      //     if ($('#role').val() == null) {
-      //         $('#login-button').prop('disabled', true);
-      //         return;
-      //     }
+      function checkIfInputsFilled() {
+        if ($('#name').val() == '') {
+            $('#addCardButton').prop('disabled', true);
+            return;
+        }
 
-      //     if ($('#email').val() == '') {
-      //         $('#login-button').prop('disabled', true);
-      //         return;
-      //     }
-          
-      //     if ($('#password').val() == '') {
-      //         $('#login-button').prop('disabled', true);
-      //         return;
-      //     }
+        if ($('bank').val() == '') {
+            $('#addCardButton').prop('disabled', true);
+            return;
+        }
 
-      //     $('#login-button').prop('disabled', false);
-      // }
+        if ($('#aunf').val() == '') {
+            $('#addCardButton').prop('disabled', true);
+            return;
+        }
 
-      // function setup() {
-      //     checkIfInputsFilled();
+        if ($('#rcs').val() == '') {
+            $('#addCardButton').prop('disabled', true);
+            return;
+        }
 
-      //     $('#role').on('change', checkIfInputsFilled);
-      //     $('#email').on('keyup', checkIfInputsFilled);
-      //     $('#password').on('keyup', checkIfInputsFilled);
+        if ($('#bonus').val() == '') {
+            $('#addCardButton').prop('disabled', true);
+            return;
+        }
 
-      //     if('{{error}}' != '') {
-      //         $('#login-error-message').css('visibility', 'visible');
-      //     }
-      // }
+        if ($('#pros').val() == '') {
+            $('#addCardButton').prop('disabled', true);
+            return;
+        }
 
-      // $('document').ready(setup);
-      document.getElementById("addCardButton").onclick = function() {
-        console.log("add card");
-      };
+        if ($('#cons').val() == '') {
+            $('#addCardButton').prop('disabled', true);
+            return;
+        }
+
+        if ($('#details').val() == '') {
+            $('#addCardButton').prop('disabled', true);
+            return;
+        }
+
+        if ($('#apply').val() == '') {
+            $('#addCardButton').prop('disabled', true);
+            return;
+        }
+
+        if ($('#advice').val() == '') {
+            $('#addCardButton').prop('disabled', true);
+            return;
+        }
+
+        if ($('#key').val() == '') {
+            $('#addCardButton').prop('disabled', true);
+            return;
+        }
+
+        $('#addCardButton').prop('disabled', false);
+      }
+    
+      function setup() {
+          checkIfInputsFilled();
+
+          $('#name').on('keyup', checkIfInputsFilled);
+          $('#bank').on('keyup', checkIfInputsFilled);
+          $('#aunf').on('keyup', checkIfInputsFilled);
+          $('#rcs').on('keyup', checkIfInputsFilled);
+          $('#bonus').on('keyup', checkIfInputsFilled);
+          $('#pros').on('keyup', checkIfInputsFilled);
+          $('#cons').on('keyup', checkIfInputsFilled);
+          $('#details').on('keyup', checkIfInputsFilled);
+          $('#apply').on('keyup', checkIfInputsFilled);
+          $('#advice').on('keyup', checkIfInputsFilled);
+          $('#key').on('keyup', checkIfInputsFilled);
+      }
+
+      $('document').ready(setup);
     </script>
     </body>
 </html>
