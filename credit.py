@@ -29,7 +29,7 @@ def index():
 
 
 @app.route('/creditable', methods=['GET', 'POST'])
-def credit_card_table():
+def credit_table():
     '''Runs databse of credit cards page.'''
 
     # adminpass = "AdminCreditPost"
