@@ -57,7 +57,7 @@ def credit_card_table():
     return response
 
 
-@app.route('/creditable', methods=['GET', 'POST'])
+@app.route('/addcreditcard', methods=['GET', 'POST'])
 def credit_card_table():
 
     adminpass = "AdminCreditPost"
