@@ -89,6 +89,7 @@ def add_credit_card():
     link = session.get('apply')
     advice = session.get('advice')
     key = session.get('key')
+    print(key)
 
     if key is adminpass:
         print("key is correct")
