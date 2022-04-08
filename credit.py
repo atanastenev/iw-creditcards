@@ -75,8 +75,10 @@ def add_credit_card():
     key = session.get('key')
 
     if key is adminpass:
+        print("key is correct")
         line = [name, bank, annualfee, rcs, bonus, pros, cons, details, link, advice]
         try:
+            print("about to add card")
             card = CreditCard(line)
             addcard(card)
         except Exception as excpetion:

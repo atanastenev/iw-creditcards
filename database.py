@@ -10,6 +10,7 @@ import sys
 from sys import exit, stderr
 from contextlib import closing
 from psycopg2 import connect
+from credit import credit_card_table
 from creditcard import CreditCard
 import os
 
@@ -53,7 +54,7 @@ def addcard(card):
     try:
         with connect(DATABASE_URL) as connection:
             with closing(connection.cursor()) as cursor:
-
+                print("inside databse")
                 # the string used to call the SQL commands
                 # to extract specific elements from the database
                 stmt_str="INSERT INTO creditcards (name, bank,\
@@ -67,9 +68,11 @@ def addcard(card):
                 credicard_values.append(card.get_details()) 
                 credicard_values.append(card.get_link()) 
                 credicard_values.append(card.get_advice())
+                print(credit_card_table)
                 
                 cursor.execute(stmt_str, credicard_values)
                 connection.commit()
+                print("successfully added?")
 
     except Exception as ex:
         print(ex, file=stderr)
