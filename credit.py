@@ -96,7 +96,7 @@ def add_credit_card():
         try:
             print("about to add card")
             card = CreditCard(line)
-            # addcard(card)
+            addcard(card)
         except Exception as excpetion:
             print(excpetion, file=stderr)
             html = render_template('error.html')

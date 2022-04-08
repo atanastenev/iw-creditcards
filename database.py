@@ -10,7 +10,6 @@ import sys
 from sys import exit, stderr
 from contextlib import closing
 from psycopg2 import connect
-from credit import credit_card_table
 from creditcard import CreditCard
 import os
 
@@ -68,7 +67,7 @@ def addcard(card):
                 credicard_values.append(card.get_details()) 
                 credicard_values.append(card.get_link()) 
                 credicard_values.append(card.get_advice())
-                print(credit_card_table)
+                print(credicard_values)
                 
                 cursor.execute(stmt_str, credicard_values)
                 connection.commit()
