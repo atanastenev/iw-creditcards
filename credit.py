@@ -78,17 +78,17 @@ def add_credit_card():
 
     adminpass = "AdminCreditPost"
 
-    name = request.form['name']
-    bank = request.form['bank']
-    annualfee = request.form['aunf']
-    rcs = request.form['rcs']
+    name = request.form['cardname']
+    bank = request.form['bankname']
+    annualfee = request.form['annual']
+    rcs = request.form['recomcs']
     bonus = request.form['bonus']
     pros =request.form['pros']
     cons = request.form['cons']
-    details = request.form['details']
-    link = request.form['apply']
+    details = request.form['detail']
+    link = request.form['link']
     advice = request.form['advice']
-    key = request.form['key']
+    key = request.form['pass']
     print(key)
 
     if key is adminpass:

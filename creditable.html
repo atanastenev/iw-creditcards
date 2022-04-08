@@ -28,57 +28,57 @@
                 <form id="add-card-popup" action="addcreditcard" method="POST">
                   <div class="container-fluid">
                     <label for="text" class="form-label">Card Name:</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter Credit Card Name">
+                    <input name="cardname" type="text" class="form-control" id="name" placeholder="Enter Credit Card Name">
                   </div>
                   <hr>
                   <div class="container-fluid">
                     <label for="text" class="form-label">Bank Name:</label>
-                    <input type="text" class="form-control" id="bank" placeholder="Enter Associated Bank">
+                    <input name="bankname" type="text" class="form-control" id="bank" placeholder="Enter Associated Bank">
                   </div>
                   <hr>
                   <div class="container-fluid">
                     <label for="text" class="form-label">Annual Fee:</label>
-                    <input type="text" class="form-control" id="aunf" placeholder="Enter Possible Annual Fee">
+                    <input name="annual" type="text" class="form-control" id="aunf" placeholder="Enter Possible Annual Fee">
                   </div>
                   <hr>
                   <div class="container-fluid">
                     <label for="text" class="form-label">Recommended Credit Score:</label>
-                    <input type="text" class="form-control" id="rcs" placeholder="Enter Recommended Credit Score">
+                    <input name="recomcs" type="text" class="form-control" id="rcs" placeholder="Enter Recommended Credit Score">
                   </div>
                   <hr>
                   <div class="container-fluid">
                     <label for="text" class="form-label">Sign-Up Bonus:</label>
-                    <input type="text" class="form-control" id="bonus" placeholder="Enter Any Sign-Up Bonuses">
+                    <input name="bonus" type="text" class="form-control" id="bonus" placeholder="Enter Any Sign-Up Bonuses">
                   </div>
                   <hr>
                   <div class="container-fluid">
                     <label for="text" class="form-label">Pros:</label>
-                    <input type="text" class="form-control" id="pros" placeholder="Enter any Pros to getting this card">
+                    <input name="pros" type="text" class="form-control" id="pros" placeholder="Enter any Pros to getting this card">
                   </div>
                   <hr>
                   <div class="container-fluid">
                     <label for="text" class="form-label">Cons:</label>
-                    <input type="text" class="form-control" id="cons" placeholder="Enter any Cons to getting this card">
+                    <input name="cons" type="text" class="form-control" id="cons" placeholder="Enter any Cons to getting this card">
                   </div>
                   <hr>
                   <div class="container-fluid">
                     <label for="comment">Details:</label>
-                    <textarea class="form-control" rows="5" id="details" name="text"></textarea> 
+                    <textarea class="form-control" rows="5" id="details" name="detail"></textarea> 
                   </div>
                   <hr>
                   <div class="container-fluid">
                     <label for="text" class="form-label">Application Link:</label>
-                    <input type="text" class="form-control" id="apply" placeholder="Enter the application link for this car">
+                    <input name="link" type="text" class="form-control" id="apply" placeholder="Enter the application link for this car">
                   </div>
                   <hr>
                   <div class="container-fluid">
                     <label for="comment">Advice:</label>
-                    <textarea class="form-control" rows="5" id="advice" name="text"></textarea> 
+                    <textarea class="form-control" rows="5" id="advice" name="advice"></textarea> 
                   </div>
                   <hr>
                   <div class="container-fluid">
                     <label for="text" class="form-label">Admin Verification Key:</label>
-                    <input type="password" class="form-control" id="key" placeholder="Enter Verification Key" name="pswd">
+                    <input name="pass" type="password" class="form-control" id="key" placeholder="Enter Verification Key" name="pswd">
                   </div>
                   <hr>
                   <button id="addCardButton" type="submit" class="btn btn-primary" disabled>Submit</button>
