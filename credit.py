@@ -78,6 +78,7 @@ def add_credit_card():
         line = [name, bank, annualfee, rcs, bonus, pros, cons, details, link, advice]
         try:
             card = CreditCard(line)
+            addcard(card)
         except Exception as excpetion:
             print(excpetion, file=stderr)
             html = render_template('error.html')
