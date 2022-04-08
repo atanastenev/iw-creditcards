@@ -76,7 +76,7 @@ def credit_table():
 @app.route('/addcreditcard', methods=['POST'])
 def add_credit_card():
 
-    adminpass = "AdminCreditPost"
+    adminpass = 'AdminCreditPost'
 
     name = request.form['cardname']
     bank = request.form['bankname']
@@ -90,6 +90,7 @@ def add_credit_card():
     advice = request.form['advice']
     key = request.form['pass']
     print(key)
+    print(type(key))
 
     if key is adminpass:
         print("key is correct")
